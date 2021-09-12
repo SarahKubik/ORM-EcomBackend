@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-// Sync method connects database/models and returns a promise the ".then promise."models to the database, then turn on the server to work with the data.
+// Sync method connects database/models and returns a promise the ".then promise."models to the database, then turn on the server to work with the data/run queries.
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
