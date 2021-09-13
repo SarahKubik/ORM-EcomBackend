@@ -10,22 +10,26 @@
 
 ## Database Architecture
 
->Secured variable to store sensitive data, i.e., password, username, port details.
->
->>Server start functionality
->>Sequelize Models
->>Routes
->>Seed commands
->>Schema setup
->>MySQL integration
+<ul>
+<li>Secured variable to store sensitive data:
+<ul>
+ <li>Password</li>
+ <li>Username</li>
+ <li>Host</li>
+</ul>
+<li>Server start functionality</li>
+<li>Sequelize Models</li>
+<li>Routes</li>
+<li>Seed commands </li>
+<li>Schema setup</li>
+<li>MySQL integration </li>
+</ul>
 
 ## Tested - CRUD Operations
 
->Using the CRUD (Create, Read, Update, and Delete) operations, the database routes are tested using **Insomina**.
->Launching Insomnia API, the routes are called to test functionality of the database by displaying data in JSON.
->
->>GET routes are expected to deliver categories, products and or tags.
->>POST, PUT, and DELETE routes will create, update, and delete the data in the database.
+>Using **Insomnia API Client and Design Tool**, CRUD (Create, Read, Update, and Delete) operations were used to call database routes to test functionality.
+>>Testing proved that the POST, PUT, and DELETE routes  create, update, and delete the data in the database.The
+GET routes delivered categories, products and or tag attributes.The results were displayed in JSON.
 
 ## Technology Used
 
@@ -40,6 +44,8 @@
 
 ## Mockup
 
+
+
 ## Links
 
->* [**Github**](https://github.com/SarahKubik/ORM-EcomBackend.git)
+**Github:** https://github.com/SarahKubik/ORM-EcomBackend.git
