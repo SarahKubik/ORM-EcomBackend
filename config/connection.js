@@ -12,6 +12,7 @@ const sequelize = process.env.JAWSDB_URL
       host: process.env.DB_HOST,
       dialect: 'mysql',
       port: process.env.DB_PORT,
+      // Globally define/set table naming rules.
       dialectOptions: {
         decimalNumbers: true,
       },
