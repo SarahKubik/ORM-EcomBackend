@@ -7,11 +7,11 @@ const Sequelize = require('sequelize');
 //Create am connection objection, calling the constructor of the Sequelize library. Grabs connection data (DB, USER, PW) from the .env file which has been added to the gitinore.
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
-  : new Sequelize( 'ecommerce_db', process.env.DB_USER,process.env.DB_PW,{
+  : new Sequelize( 'ecommerce_db', process.env.DB_USER, process.env.DB_PASS,{
    //Database location (object)
       host: process.env.DB_HOST,
       dialect: 'mysql',
-      port: '3306',
+      port: process.env.DB_PORT,
       dialectOptions: {
         decimalNumbers: true,
       },
