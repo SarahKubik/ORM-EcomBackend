@@ -6,11 +6,12 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
-
+// Anonymous callback function is Asynchronous async/await pattern whereas .then are promises
 // find all categories-http://localhost:3001/api/categories
   // be sure to include its associated Products
-router.get('/', (req, res) => {
+router.get('/', async(req, res) => {
 try {
+  // Store category in a variable once the promise is resolved.
   const categoryData = await Category.findAll({
      include: [
       {
@@ -28,7 +29,7 @@ try {
 
   // find one category by its `id` value
   // be sure to include its associated Products
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [
@@ -53,7 +54,7 @@ router.get('/:id', (req, res) => {
  // create new category
   //  req.body or response would be defined as { category_name: "Shorts" }
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
@@ -63,7 +64,7 @@ router.post('/', (req, res) => {
 });
 
   // update a category by its `id` value
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const categoryData = await Category.update(req.body, {
       where: {
@@ -81,7 +82,7 @@ router.put('/:id', (req, res) => {
 });
 
   // delete a category by its `id` value
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const categoryData = await Category.destroy({
       where: {
