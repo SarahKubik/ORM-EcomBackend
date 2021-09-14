@@ -13,12 +13,12 @@ router.get('/', async(req, res) => {
 try {
   // Store category in a variable once the promise is resolved.
   const categoryData = await Category.findAll({
-     include: [ Product ]
-    //   {
-    //     model: Product,
-    //     as: 'products'
-    //   }
-    // ]
+     include: [ 
+      {
+        model: Product,
+        as: 'products'
+      }
+    ]
   });
     res.status(200).json(categoryData);
   } catch (err) {
